@@ -1,6 +1,6 @@
 specVersion: 0.0.2
-description: Test Subgraph for Ethereum
-repository: https://github.com/afshanaman81/test-subgraph
+description: Test Subgraph for B Protocol
+repository: https://github.com/afshanaman81/b-protocol-subgraph
 schema:
   file: ./schema.graphql
 dataSources:
