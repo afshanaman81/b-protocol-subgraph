@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 description: Test Subgraph for Ethereum
-repository: https://github.com/afshanaman81/example-subgraph
+repository: https://github.com/afshanaman81/test-subgraph
 schema:
   file: ./schema.graphql
 dataSources:
