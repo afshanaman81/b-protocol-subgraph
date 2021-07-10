@@ -1,14 +1,15 @@
 {
-  "name": "test-subgraph",
+  "name": "b-protocol-subgraph",
   "version": "0.1.0",
+  "author": "afshan.aman@gmail.com",
   "scripts": {
     "build-contract": "solc contracts/Gravity.sol --abi -o abis --overwrite && solc contracts/Gravity.sol --bin -o bin --overwrite",
-    "create": "graph create afshanaman81/test-subgraph --node https://api.thegraph.com/deploy/",
-    "create-local": "graph create afshanaman81/test-subgraph --node http://127.0.0.1:8020",
+    "create": "graph create afshanaman81/b-protocol-subgraph --node https://api.thegraph.com/deploy/",
+    "create-local": "graph create afshanaman81/b-protocol-subgraph --node http://127.0.0.1:8020",
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy afshanaman81/test-subgraph --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
-    "deploy-local": "graph deploy afshanaman81/test-subgraph --ipfs http://localhost:5001 --node http://127.0.0.1:8020"
+    "deploy": "graph deploy afshanaman81/b-protocol-subgraph --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "deploy-local": "graph deploy afshanaman81/b-protocol-subgraph --ipfs http://localhost:5001 --node http://127.0.0.1:8020"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.20.1",
