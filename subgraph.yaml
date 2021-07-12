@@ -5,23 +5,34 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
-    name: Gravity
+    name: BPRO
     network: mainnet
     source:
-      address: '0x2E645469f354BB4F5c8a05B3b30A929361cf77eC'
-      abi: Gravity
+      address: '0xbbbbbbb5aa847a2003fbc6b5c16df0bd1e725f61'
+      abi: BPRO
+      startBlock: 12288649
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
-        - Gravatar
+        - Checkpoint
       abis:
-        - name: Gravity
-          file: ./abis/Gravity.json
+        - name: BPRO
+          file: ./abis/BPRO.json
       eventHandlers:
-        - event: NewGravatar(uint256,address,string,string)
-          handler: handleNewGravatar
-        - event: UpdatedGravatar(uint256,address,string,string)
-          handler: handleUpdatedGravatar
+        # - event: NewGravatar(uint256,address,string,string)
+        #   handler: handleNewGravatar
+        # - event: UpdatedGravatar(uint256,address,string,string)
+        #   handler: handleUpdatedGravatar
+        - event:  MinterChanged(address, address)
+          handler: todoInTheMappings.ts
+        - event: DelegateChanged(address, address, address)
+          handler: todoInTheMappings.ts
+        - event: DelegateVotesChanged(address, uint, uint)
+          handler: todoInTheMappings.ts
+        - event: Transfer(address, address, uint256)
+          handler: todoInTheMappings.ts
+        - event: Approval(address, address, uint256)
+          handler: todoInTheMappings.ts
       file: ./src/mapping.ts
