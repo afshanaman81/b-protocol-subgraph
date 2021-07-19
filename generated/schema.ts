@@ -69,3 +69,181 @@ export class Gravatar extends Entity {
     this.set("imageUrl", Value.fromString(value));
   }
 }
+
+export class Checkpoint extends Entity {
+  constructor(id: string) {
+    super();
+    this.set("id", Value.fromString(id));
+  }
+
+  save(): void {
+    let id = this.get("id");
+    assert(id !== null, "Cannot save Checkpoint entity without an ID");
+    assert(
+      id.kind == ValueKind.STRING,
+      "Cannot save Checkpoint entity with non-string ID. " +
+        'Considering using .toHex() to convert the "id" to a string.'
+    );
+    store.set("Checkpoint", id.toString(), this);
+  }
+
+  static load(id: string): Checkpoint | null {
+    return store.get("Checkpoint", id) as Checkpoint | null;
+  }
+
+  get id(): string {
+    let value = this.get("id");
+    return value.toString();
+  }
+
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
+  }
+
+  get fromBlock(): BigInt {
+    let value = this.get("fromBlock");
+    return value.toBigInt();
+  }
+
+  set fromBlock(value: BigInt) {
+    this.set("fromBlock", Value.fromBigInt(value));
+  }
+
+  get votes(): BigInt {
+    let value = this.get("votes");
+    return value.toBigInt();
+  }
+
+  set votes(value: BigInt) {
+    this.set("votes", Value.fromBigInt(value));
+  }
+}
+
+export class Minter extends Entity {
+  constructor(id: string) {
+    super();
+    this.set("id", Value.fromString(id));
+  }
+
+  save(): void {
+    let id = this.get("id");
+    assert(id !== null, "Cannot save Minter entity without an ID");
+    assert(
+      id.kind == ValueKind.STRING,
+      "Cannot save Minter entity with non-string ID. " +
+        'Considering using .toHex() to convert the "id" to a string.'
+    );
+    store.set("Minter", id.toString(), this);
+  }
+
+  static load(id: string): Minter | null {
+    return store.get("Minter", id) as Minter | null;
+  }
+
+  get id(): string {
+    let value = this.get("id");
+    return value.toString();
+  }
+
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
+  }
+
+  get address(): Bytes {
+    let value = this.get("address");
+    return value.toBytes();
+  }
+
+  set address(value: Bytes) {
+    this.set("address", Value.fromBytes(value));
+  }
+}
+
+export class Delegator extends Entity {
+  constructor(id: string) {
+    super();
+    this.set("id", Value.fromString(id));
+  }
+
+  save(): void {
+    let id = this.get("id");
+    assert(id !== null, "Cannot save Delegator entity without an ID");
+    assert(
+      id.kind == ValueKind.STRING,
+      "Cannot save Delegator entity with non-string ID. " +
+        'Considering using .toHex() to convert the "id" to a string.'
+    );
+    store.set("Delegator", id.toString(), this);
+  }
+
+  static load(id: string): Delegator | null {
+    return store.get("Delegator", id) as Delegator | null;
+  }
+
+  get id(): string {
+    let value = this.get("id");
+    return value.toString();
+  }
+
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
+  }
+
+  get address(): Bytes {
+    let value = this.get("address");
+    return value.toBytes();
+  }
+
+  set address(value: Bytes) {
+    this.set("address", Value.fromBytes(value));
+  }
+}
+
+export class Vote extends Entity {
+  constructor(id: string) {
+    super();
+    this.set("id", Value.fromString(id));
+  }
+
+  save(): void {
+    let id = this.get("id");
+    assert(id !== null, "Cannot save Vote entity without an ID");
+    assert(
+      id.kind == ValueKind.STRING,
+      "Cannot save Vote entity with non-string ID. " +
+        'Considering using .toHex() to convert the "id" to a string.'
+    );
+    store.set("Vote", id.toString(), this);
+  }
+
+  static load(id: string): Vote | null {
+    return store.get("Vote", id) as Vote | null;
+  }
+
+  get id(): string {
+    let value = this.get("id");
+    return value.toString();
+  }
+
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
+  }
+
+  get delegator(): string {
+    let value = this.get("delegator");
+    return value.toString();
+  }
+
+  set delegator(value: string) {
+    this.set("delegator", Value.fromString(value));
+  }
+
+  get balance(): BigInt {
+    let value = this.get("balance");
+    return value.toBigInt();
+  }
+
+  set balance(value: BigInt) {
+    this.set("balance", Value.fromBigInt(value));
+  }
+}

@@ -25,14 +25,14 @@ dataSources:
         #   handler: handleNewGravatar
         # - event: UpdatedGravatar(uint256,address,string,string)
         #   handler: handleUpdatedGravatar
-        - event:  MinterChanged(address, address)
-          handler: todoInTheMappings.ts
-        - event: DelegateChanged(address, address, address)
-          handler: todoInTheMappings.ts
-        - event: DelegateVotesChanged(address, uint, uint)
-          handler: todoInTheMappings.ts
-        - event: Transfer(address, address, uint256)
-          handler: todoInTheMappings.ts
-        - event: Approval(address, address, uint256)
-          handler: todoInTheMappings.ts
+        - event:  MinterChanged(address,address)
+          handler: handleMinterChanged
+        - event: DelegateChanged(indexed address,indexed address,indexed address)
+          handler: handleDelegateChanged
+        - event: DelegateVotesChanged(indexed address,uint256,uint256)
+          handler: handleDelegateVotesChanged
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApproval
       file: ./src/mapping.ts

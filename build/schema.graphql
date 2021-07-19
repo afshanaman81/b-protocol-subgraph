@@ -4,3 +4,25 @@ type Gravatar @entity {
   displayName: String!
   imageUrl: String!
 }
+
+type Checkpoint @entity {
+  id: ID!
+  fromBlock: BigInt!
+  votes: BigInt!
+}
+
+type Minter @entity {
+  id: ID!
+  address: Bytes!
+}
+
+type Delegator @entity {
+  id: ID!
+  address: Bytes!
+}
+
+type Vote @entity {
+  id: ID!
+  delegator: Delegator!
+  balance: BigInt!
+}

@@ -27,14 +27,21 @@ How Tos:
 - then copied them over to the `abis` folder in this repo
 - updated the `subgraph.yaml` file
   - set:
-  - dataSources.name: BPRO
-  - dataSources.source.address: ADDRESS FROM THE ETHERSCAN
-  - dataSources.source.abi: BPRO
-  - dataSources.mapping.entities: Checkpoint 
-    - (its the `struct` in the contract. Do I need to provide all the variables of basic types, e.g the `name` and the `minter` variables?)
-  - dataSources.mapping.abis.name and file
-  - Added the events from the BPRO.sol to the dataSources.mapping.eventHandlers
-- TODO: need to add event handlers to the `src/mapping.ts`
+    - dataSources.name: BPRO
+    - dataSources.source.address: ADDRESS FROM THE ETHERSCAN
+    - dataSources.source.abi: BPRO
+    - dataSources.mapping.entities: Checkpoint 
+      - (its the `struct` in the contract. Do I need to provide all the variables of basic types, e.g the `name` and the `minter` variables?)
+    - dataSources.mapping.abis.name and file
+  - Manually typed the events from the BPRO.sol to the dataSources.mapping.eventHandlers
+    - add event handler pointers, which references the functions in the `src/mapping.ts` 
+  - Generate the `graphql generated code` by running: `npm run codegen`
+    - this will create a file `generated/schema.ts` and `generated/BPRO/BPRO.ts` 
+  - Add function definitions for the event handlers and passing in the imported event types from the BPRO.ts file (from the generated typescript code)
+
+much much later ...
+- build: `npm run build`
+- deploy: `npm run deploy`
 
 
 

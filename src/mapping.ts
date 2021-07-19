@@ -1,3 +1,4 @@
+import { Approval, DelegateChanged, DelegateVotesChanged, MinterChanged, Transfer } from '../generated/BPRO/BPRO';
 import { NewGravatar, UpdatedGravatar } from '../generated/Gravity/Gravity'
 import { Gravatar } from '../generated/schema'
 
@@ -19,4 +20,20 @@ export function handleUpdatedGravatar(event: UpdatedGravatar): void {
   gravatar.displayName = event.params.displayName
   gravatar.imageUrl = event.params.imageUrl
   gravatar.save()
+}
+
+export function handleMinterChanged(event: MinterChanged): void {
+
+}
+
+export function handleDelegateChanged(event: DelegateChanged): void {
+} 
+
+export function handleDelegateVotesChanged(event: DelegateVotesChanged): void {
+}
+
+export function handleTransfer(event: Transfer): void {
+}
+
+export function handleApproval(event: Approval): void {
 }
